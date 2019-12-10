@@ -1,0 +1,6 @@
+{
+  "Values": {
+    "AzureWebJobsStorage": "{your storage account connection string here}",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+  }
+}
