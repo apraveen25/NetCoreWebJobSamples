@@ -22,10 +22,13 @@ namespace ConsoleAppDefaultDI
     {
         static void Main(string[] args)
         {
+            var environmentName = Environment.GetEnvironmentVariable("ENVIRONMENT");
+
             // Setup console application to read settings from appsettings.json
             IConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true, true);
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{environmentName}.json", true, true);
 
             IConfigurationRoot configuration = configurationBuilder.Build();
 
